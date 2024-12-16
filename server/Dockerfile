@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:20
 
 LABEL version="1.0"
 LABEL description="Housing System"

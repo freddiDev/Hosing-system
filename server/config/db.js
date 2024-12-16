@@ -9,7 +9,6 @@ const connectToDB = async () => {
     const connect = await mongoose.connect(MONGO_DB_CONFIG.DB, {
         dbName: process.env.DB_NAME,
     });
-    console.log('=========ewe',connect)
     console.log(`MongoDB connected: ${connect.connection.host}`);
 };
 

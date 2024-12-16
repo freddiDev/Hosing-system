@@ -50,6 +50,22 @@ services:
     networks:
       - network-housing-system
 
+  website-housing-system:
+    restart: always
+    build:
+      context: ./website
+      dockerfile: Dockerfile
+    container_name: website-housing-system
+    volumes:
+      - ./website:/app
+      - ./website/node_modules:/app/node_modules 
+    depends_on:
+      - node-housing-system
+    ports:
+      - 3000:3000
+    networks:
+      - network-housing-system
+
 networks:
   network-housing-system:
     driver: bridge
